@@ -1,0 +1,231 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Step {{counter}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-progress-bar [value]="progress"></ion-progress-bar>
+  <swiper-container #mainSwiper [allowTouchMove]="false">
+    <swiper-slide class="slide-1">
+      <ion-card style="height: 70vh;">
+        <ion-card-header>
+          <h2 style="text-align: center;">Expense Categories</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Select the categories where you allocate your money to track your spending habits.</p>
+          <ion-list>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Food</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Home</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Clothing</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Guest</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end"  slot="start"><span class="ion-text-wrap">Travel</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end"  slot="start"><span class="ion-text-wrap">Medical</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end"  slot="start"><span class="ion-text-wrap">Internet</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end"  slot="start"><span class="ion-text-wrap">Misc</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end"  slot="start"><span class="ion-text-wrap">Indulgence</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+            </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide class="slide-2">
+      <ion-card style="height: 70vh;">
+        <ion-card-header>
+          <h2 style="text-align: center;">Savings Categories</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Select the categories where you set aside money for future goals.</p>
+          <ion-list>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Hajj</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col>
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">House</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Car</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col>
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Gold</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Baby</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Vacation</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-item lines="none">
+                    <ion-checkbox checked labelPlacement="end" slot="start"><span class="ion-text-wrap">Kid's Education</span></ion-checkbox>
+                  </ion-item>  
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+            </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide class="slide-3">
+      <ion-card style="height: 70vh;">
+        <ion-card-header>
+          <h2 style="text-align: center;">Income Categories</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Select the categories where you receive/save your income.</p><br/>
+          <ion-list style="overflow-y: scroll; height: 400px;">
+            <ion-item-group>
+              <ion-item-divider color="light">
+                <ion-label>HDFC BANK</ion-label>
+              </ion-item-divider>
+              <ion-item lines="full">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Savings</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Current</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Paycheque</span></ion-checkbox>
+              </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+              <ion-item-divider color="light">
+                <ion-label>CANARA BANK</ion-label>
+              </ion-item-divider>
+              <ion-item lines="full">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Savings</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Current</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Paycheque</span></ion-checkbox>
+              </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+              <ion-item-divider color="light">
+                <ion-label>ICICI BANK</ion-label>
+              </ion-item-divider>
+              <ion-item lines="full">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Savings</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-checkbox  labelPlacement="end" slot="start"><span class="ion-text-wrap">Current</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Paycheque</span></ion-checkbox>
+              </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+              <ion-item-divider color="light">
+                <ion-label>PUNJAB NATIONAL BANK</ion-label>
+              </ion-item-divider>
+              <ion-item lines="full">
+                <ion-checkbox  labelPlacement="end" slot="start"><span class="ion-text-wrap">Savings</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Current</span></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox labelPlacement="end" slot="start"><span class="ion-text-wrap">Paycheque</span></ion-checkbox>
+              </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+              <ion-item>
+                <ion-label></ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label></ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label></ion-label>
+              </ion-item>
+            </ion-item-group>
+            </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+
+  </swiper-container>
+  <ion-button fill="outline" *ngIf="counter > 1" size="default" (click)="previousSlide()" shape="round" color="primary"  style="margin: 0 15px;">
+    PREVIOUS
+  </ion-button>
+  <ion-button fill="outline" *ngIf="counter > 1" expand="block" size="default" (click)="nextSlide()" shape="round" color="primary" style="margin: 0 15px;float: right;width: 140px;">
+    {{counter >= 3 ? "Submit":"NEXT"}}
+  </ion-button>
+  <ion-button fill="outline" *ngIf="counter == 1" expand="block" (click)="nextSlide()" shape="round" color="primary" style="margin: 0 15px;">
+    NEXT
+  </ion-button>
+</ion-content>

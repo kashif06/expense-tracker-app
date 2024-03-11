@@ -1,0 +1,66 @@
+<ion-grid>
+  <ion-card style="margin:5px">
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-select placeholder="Select category" aria-label="Fruit" (ionChange)="handleChange($event)" (ionCancel)="handleCancel()" (ionDismiss)="handleDismiss()">
+          <ion-select-option value="all">All</ion-select-option>
+          <ion-select-option value="food">Food</ion-select-option>
+          <ion-select-option value="home">Home</ion-select-option>
+          <ion-select-option value="medical">Medical</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-list class="marginTp6">
+        <ion-datetime-button color="none" datetime="dateBtn"></ion-datetime-button>
+        <ion-popover  [keepContentsMounted]="true" alignment="center" mode="ios" 
+        animated="false" >
+          <ng-template>
+            <ion-datetime id="dateBtn"
+            preferWheel="false"
+            (ionChange)="onDateChange($event)"
+            [showDefaultButtons]="true"
+            presentation="month-year"></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row class="marginTp10" style="position: sticky; top: 0; z-index: 10;">
+    <ion-col size="4">
+      <ion-item>
+        <ion-input type="number" placeholder="Amt" #amountInput></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-input type="text" placeholder="Description" #descriptionInput></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2">
+        <ion-img height="25px" class="center" (click)="addItem()" src="../../../assets/add-circle-outline.svg"></ion-img>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+
+  <div style="overflow-y: scroll; height: 400px;margin-top: 10px;">
+  <ion-content scroll-y>
+    <!-- <ion-card *ngFor="let item of items"> -->
+      <ion-item *ngFor="let item of items">
+        <ion-col size="4">
+          <ion-label>
+            <h2>₹ {{ item.price }}</h2>
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <p>{{ item.description }}</p>
+        </ion-col>
+        <ion-col size="2" (click)="openModal()">
+          <ion-img height="25px" class="center" src="../../../assets/create-outline.svg"></ion-img>
+        </ion-col>
+      </ion-item>
+    <!-- </ion-card> -->
+  </ion-content>
+</div>
+</ion-grid>

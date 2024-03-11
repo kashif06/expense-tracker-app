@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Update</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-item lines="full">
+          <ion-select value="food" placeholder="Select category" aria-label="Fruit">
+            <ion-select-option value="all">All</ion-select-option>
+            <ion-select-option value="food">Food</ion-select-option>
+            <ion-select-option value="home">Home</ion-select-option>
+            <ion-select-option value="medical">Medical</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-datetime-button color="none" datetime="dateBtn"></ion-datetime-button>
+          <ion-popover [keepContentsMounted]="true" alignment="center" mode="ios" 
+          animated="false" >
+            <ng-template>
+              <ion-datetime id="dateBtn"
+              preferWheel="false"
+              [showDefaultButtons]="true"
+              presentation="month-year"></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-item lines="full">
+          <ion-input type="number" placeholder="Amt" value="230"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item lines="full">
+          <ion-input type="text" placeholder="Description" value="Editing the description"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-button fill="outline" color="danger" expand="block">Delete</ion-button>
+
+
+  </ion-grid>
+  
+  
+</ion-content>
