@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Categories</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-segment [(ngModel)]="segmentValue" value="expense" style="height: 50px;">
+    
+    <ion-segment-button value="expense">
+      <ion-label>Expense</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="income">
+      <ion-label>Income</ion-label>
+    </ion-segment-button>
+    
+    <ion-segment-button value="savings">
+      <ion-label>Savings</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="goals">
+      <ion-label>Goals</ion-label>
+    </ion-segment-button>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  </ion-segment>
+
+
+    <div class="full-height">
+      <div class="full-height slight-grey" *ngIf="segmentValue == 'expense' ">
+        <app-expense-category [segment]="segmentValue"></app-expense-category>
+      </div>
+      <div class="full-height slight-grey" *ngIf="segmentValue == 'income' ">
+        <app-income-category [segment]="segmentValue"></app-income-category>
+      </div>
+    </div>
+
 </ion-content>

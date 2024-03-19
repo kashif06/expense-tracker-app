@@ -1,0 +1,18 @@
+<ion-card>
+  <ion-card-header style="display: flex;">
+    <ion-card-title>
+      Income
+      <div style="float: right;"><ion-icon size="large" src="../../../assets/icon/add-outline.svg"></ion-icon></div>
+    </ion-card-title>
+  </ion-card-header> 
+  <ion-card-content>
+    Record your income sources (salary, investments, etc.)'
+  </ion-card-content>
+  <!-- <ion-button fill="clear" (click)="add('income')">Add</ion-button> -->
+</ion-card>
+
+<ion-fab (click)="addIncome()" vertical="bottom" horizontal="end">
+  <ion-fab-button>
+    <ion-icon size="large" src="../../../assets/icon/add-outline.svg"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

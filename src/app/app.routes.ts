@@ -6,10 +6,6 @@ export const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
   },
   {
-    path: 'category',
-    loadComponent: () => import('./page/category/category.page').then( m => m.CategoryPage)
-  },
-  {
     path: 'journey',
     loadComponent: () => import('./page/journey/journey.page').then( m => m.JourneyPage)
   },

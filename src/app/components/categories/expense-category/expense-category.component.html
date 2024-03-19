@@ -1,0 +1,69 @@
+<ion-card *ngIf="toggleBudgetCard" >
+  <ion-card-header>
+    <ion-card-title>
+      Expense
+    </ion-card-title>
+  </ion-card-header>  
+  <ion-card-content>
+    Set your monthly budget to track and manage your daily, weekly, and monthly expenses.
+    <ion-list style="margin-top: 10px;">
+        <ion-item style="right:12px">
+          <ion-input [value]="expenseBudget" (ionInput)="onInput($event)" label="Monthly budget" type="number" placeholder="25000"></ion-input>
+        </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-button (click)="setBudget()" fill="clear">Save budget</ion-button>
+</ion-card>
+<ion-list *ngIf="toggleBudgetCard" >
+  <ion-item lines="none">
+    <p style="padding: 0 10px">
+      This budget will be used to calculate your progress on the expense tracker page where you record your daily spending. 
+    </p>
+  </ion-item>
+</ion-list>
+<ion-card *ngIf="!toggleBudgetCard">
+  <ion-card-header style="display: flex;">
+    <ion-card-title>
+      March Expense
+      <div style="float: right;"><ion-icon size="medium" (click)="toggleBudget()" src="../../../assets/icon/pencil-outline.svg"></ion-icon></div>
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+      <ion-label style="float: left;">Spent</ion-label>
+      <ion-label style="float: right;">Budget</ion-label>
+      <ion-progress-bar [color]="getExpenseStatusColor()" buffer="0.4" [value]="0.6" style="height: 5px;"></ion-progress-bar>
+      <div class="" style="margin-bottom: 15px;">
+        <span style="font-weight: bold; float: left;">₹ 12,000</span>
+        <span style="font-weight: bold; float: right;">₹ 25,000</span>
+      </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-card *ngIf="!toggleBudgetCard">
+  <ion-card-header style="display: flex;">
+    <ion-card-title>
+      March Expense
+      <div style="float: right;"><ion-icon size="medium" (click)="toggleBudget()" src="../../../assets/icon/pencil-outline.svg"></ion-icon></div>
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    
+    <!-- <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical> -->
+
+  </ion-card-content>
+</ion-card>

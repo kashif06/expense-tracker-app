@@ -1,3 +1,4 @@
+<ion-backdrop [visible]="true" style="display: none;"></ion-backdrop>
 <ion-grid>
   <ion-card style="margin:5px">
   <ion-row>
@@ -39,7 +40,7 @@
       </ion-item>
     </ion-col>
     <ion-col size="2">
-        <ion-img height="25px" class="center" (click)="addItem()" src="../../../assets/add-circle-outline.svg"></ion-img>
+        <ion-img height="25px" class="center" (click)="addItem()" src="../../../assets/icon/add-circle-outline.svg"></ion-img>
     </ion-col>
   </ion-row>
   </ion-card>
@@ -57,10 +58,13 @@
           <p>{{ item.description }}</p>
         </ion-col>
         <ion-col size="2" (click)="openModal()">
-          <ion-img height="25px" class="center" src="../../../assets/create-outline.svg"></ion-img>
+          <ion-img height="25px" class="center" src="../../../assets/icon/create-outline.svg"></ion-img>
         </ion-col>
       </ion-item>
     <!-- </ion-card> -->
   </ion-content>
 </div>
 </ion-grid>
+<div id="box" style="display: none;">
+  <ion-button class="ion-margin-start" color="light">Set monthly budget</ion-button>
+</div>
