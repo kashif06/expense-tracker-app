@@ -1,7 +1,7 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, Input, ChangeDetectorRef, ViewChild  } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, Input, ViewChild, ElementRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import type { IonInput } from '@ionic/angular';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-expense-category',
@@ -13,15 +13,13 @@ import type { IonInput } from '@ionic/angular';
 })
 export class ExpenseCategoryComponent  implements OnInit {
   @Input() segment?: string;
+  @Input() view: any;
   @ViewChild('ionInputExpenseNumber', { static: true }) ionInputExpenseNumber!: IonInput;
   expenseBudget?:number ;
   toggleBudgetCard: boolean = true;
 
   single: any[] = [];
   multi: any[] = [];
-
-  view: any[] = [700, 400];
-
   // options
   showXAxis = true;
   showYAxis = true;
@@ -32,12 +30,14 @@ export class ExpenseCategoryComponent  implements OnInit {
   showYAxisLabel = true;
   yAxisLabel = 'Population';
 
-  colorScheme = {
+  // colorScheme = '#5AA454';
+
+  colorScheme:any = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
   
   constructor() { 
-    // Object.assign(this, { single })
+    // Object.assign(this, { this.single })
   }
 
   ngOnInit() {
@@ -55,6 +55,9 @@ export class ExpenseCategoryComponent  implements OnInit {
         "value": 7200000
       }
     ];
+  }
+
+  ngAfterViewInit() {
   }
 
   onSelect(event:any) {

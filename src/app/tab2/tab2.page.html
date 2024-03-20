@@ -27,7 +27,7 @@
 
     <div class="full-height">
       <div class="full-height slight-grey" *ngIf="segmentValue == 'expense' ">
-        <app-expense-category [segment]="segmentValue"></app-expense-category>
+        <app-expense-category [segment]="segmentValue" [view]="view"></app-expense-category>
       </div>
       <div class="full-height slight-grey" *ngIf="segmentValue == 'income' ">
         <app-income-category [segment]="segmentValue"></app-income-category>
