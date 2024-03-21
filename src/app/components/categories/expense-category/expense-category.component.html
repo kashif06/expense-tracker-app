@@ -1,4 +1,4 @@
-<ion-card *ngIf="toggleBudgetCard" >
+<ion-card *ngIf="!toggleBudgetCard" >
   <ion-card-header>
     <ion-card-title>
       Expense
@@ -14,18 +14,18 @@
   </ion-card-content>
   <ion-button (click)="setBudget()" fill="clear">Save budget</ion-button>
 </ion-card>
-<ion-list *ngIf="toggleBudgetCard" >
+<ion-list *ngIf="!toggleBudgetCard" >
   <ion-item lines="none">
     <p style="padding: 0 10px">
       This budget will be used to calculate your progress on the expense tracker page where you record your daily spending. 
     </p>
   </ion-item>
 </ion-list>
-<ion-card *ngIf="!toggleBudgetCard">
+<ion-card *ngIf="toggleBudgetCard">
   <ion-card-header style="display: flex;">
     <ion-card-title>
       March Expense
-      <div style="float: right;"><ion-icon size="medium" (click)="toggleBudget()" src="../../../assets/icon/pencil-outline.svg"></ion-icon></div>
+      <div style="float: right;"><ion-icon size="small" (click)="toggleBudget()" src="../../../assets/icon/pencil-outline.svg"></ion-icon></div>
     </ion-card-title>
   </ion-card-header>
 
@@ -39,29 +39,65 @@
       </div>
   </ion-card-content>
 </ion-card>
-
-<ion-card *ngIf="!toggleBudgetCard">
-  <ion-card-header style="display: flex;">
+<ion-card>
+  <ion-card-header>
     <ion-card-title>
-      March Expense
-      <div style="float: right;"><ion-icon size="medium" (click)="toggleBudget()" src="../../../assets/icon/pencil-outline.svg"></ion-icon></div>
+      Overall Expenses
+    </ion-card-title>
+    <!-- <ion-card-subtitle>Monitor your spending habits and track your expenses over time. Choose a timeframe below to view your expenditure trends.</ion-card-subtitle> -->
+  </ion-card-header>
+  <ion-card-content>
+    <div>
+      <ion-row>
+        <!-- <ion-col style="margin-top: auto;margin-bottom: auto;">
+          Choose a timeframe below to view your expenditure trends.
+        </ion-col> -->
+        <ion-col>
+          <ion-select placeholder="3 months" value="3" aria-label="Time Period" (ionChange)="handleChange($event)" (ionCancel)="handleCancel()" (ionDismiss)="handleDismiss()">
+            <ion-select-option value="3">Last 3 months</ion-select-option>
+            <ion-select-option value="6">Last 6 months</ion-select-option>
+            <ion-select-option value="1">Last 1 year</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <canvas #barCanvas1></canvas>
+    </div>
+    
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      Category
     </ion-card-title>
   </ion-card-header>
-
   <ion-card-content>
-    <ngx-charts-bar-vertical
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="single"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-      (select)="onSelect($event)">
-    </ngx-charts-bar-vertical>
+    <div>
+      <ion-row>
+        <ion-col>
+          <ion-select placeholder="Select category" value="home" aria-label="Fruit" (ionChange)="handleChange2($event)" (ionCancel)="handleCancel2()" (ionDismiss)="handleDismiss2()">
+            <ion-select-option value="food">Food</ion-select-option>
+            <ion-select-option value="home">Home</ion-select-option>
+            <ion-select-option value="medical">Medical</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col>
+          <ion-select placeholder="3 months" value="3" aria-label="Fruit" (ionChange)="handleChange2($event)" (ionCancel)="handleCancel2()" (ionDismiss)="handleDismiss2()">
+            <ion-select-option value="3">Last 3 months</ion-select-option>
+            <ion-select-option value="6">Last 6 months</ion-select-option>
+            <ion-select-option value="1">Last 1 year</ion-select-option>
+            <!-- <ion-select-option value="home">Home</ion-select-option> -->
+            <!-- <ion-select-option value="medical">Medical</ion-select-option> -->
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <canvas #barCanvas2></canvas>
+    </div>
+    
   </ion-card-content>
 </ion-card>

@@ -23,24 +23,7 @@ export class Tab2Page {
   public segmentValue:string = 'expense';
 
   constructor(private platform: Platform) { 
-    addIcons(this.icons)
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onWindowResize(event: Event) {
-    // Handle window resize event
-  }
-
-  handleScreenSizeChange() {
-    const width = this.platform.width();
-    const height = this.platform.height();
-    if(width > height) {
-      this.view = [0.9 * width, 0.9 * height]
-    } else {
-      this.view = [0.95 * width, 0.35 * height]
-    }
-
-
+    // addIcons(this.icons)
   }
 
   ngOnInit() {
