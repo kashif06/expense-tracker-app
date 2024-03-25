@@ -1,0 +1,57 @@
+<ion-grid>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="margin-top: 15px;margin-bottom: 0px;">Hajj</ion-card-title>
+      <ion-progress-bar [color]="getExpenseStatusColor()" [value]="0.2"></ion-progress-bar>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="target-amount">Target Amount: ₹8,00,000</p>
+      <p class="current-savings">Current Savings: ₹50,000</p>
+      <ion-row>
+        <ion-col>
+          <ion-button fill="outline" expand="block" (click)="openModal()">+ Add Amount</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="outline" expand="block" (click)="openModal2()">View Entries</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="margin-top: 15px;margin-bottom: 0px;">Car</ion-card-title>
+      <ion-progress-bar [color]="getExpenseStatusColor()" [value]="0.9"></ion-progress-bar>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="target-amount">Target Amount: ₹4,00,000</p>
+      <p class="current-savings">Current Savings: ₹3,80,000</p>
+      <ion-row>
+        <ion-col>
+          <ion-button fill="outline" expand="block" (click)="openModal()">+ Add Amount</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="outline" expand="block" (click)="openModal2()">View Entries</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="margin-top: 15px;margin-bottom: 0px;">Yearly vacation</ion-card-title>
+      <ion-progress-bar [color]="getExpenseStatusColor()" [value]="0.45"></ion-progress-bar>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="target-amount">Target Amount: ₹2,00,000</p>
+      <p class="current-savings">Current Savings: ₹50,000</p>
+      <ion-row>
+        <ion-col>
+          <ion-button fill="outline" expand="block" (click)="openModal()">+ Add Amount</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="outline" expand="block" (click)="openModal2()">View Entries</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+</ion-grid>

@@ -1,0 +1,56 @@
+ion-progress-bar::part(track) {
+    background: beige;
+}
+
+ion-progress-bar {
+    height: 10px;
+}
+
+/* Styles for ion-grid */
+.expense-grid {
+    padding: 20px;
+  }
+  
+  /* Styles for ion-card */
+  .expense-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles for ion-card-header */
+  .expense-header {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Styles for ion-card-content */
+  .expense-content {
+    padding: 10px;
+  }
+  
+  /* Styles for ion-button */
+  .add-amount-btn {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for progress bar */
+  .expense-progress-bar {
+    height: 10px;
+  }
+  
+  /* Styles for target amount */
+  .target-amount {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Styles for current savings */
+  .current-savings {
+    margin-bottom: 15px;
+  }
+  
+  /* Styles for view entries button */
+  .view-entries-btn {
+    float: right;
+  }
+  

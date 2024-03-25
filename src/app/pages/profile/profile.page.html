@@ -1,8 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Register</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <!-- <ion-card> -->
@@ -12,49 +16,44 @@
         <ion-input
           label="First name"
           labelPlacement="floating"
+          value="Kashif"
           fill="outline"
-          [value]="firstName"
-          (ionInput)="onInputFirstName($event)"
-          #ionInputEl
         ></ion-input>
       </ion-item>
       
       <ion-item style="margin-bottom: 10px;">
         <ion-input
           label="Last name"
+          value="Shaikh"
           labelPlacement="floating"
           fill="outline"
-          [value]="lastName"
-          (ionInput)="onInputlastName($event)"
-          #ionInputEl2
         ></ion-input>
       </ion-item>
 
-      <ion-item lines="none" style="margin-bottom: 10px;">
+      <ion-item style="margin-bottom: 10px;">
         <ion-input
           type="email"
           fill="solid"
           label="Email"
+          value="kashifshaikh440@gmail.com"
           labelPlacement="floating"
           fill="outline"
-          errorText="Invalid email"
-          ngModel
-          email
+          [disabled]="true"
         ></ion-input>
       </ion-item>
 
-      <ion-item lines="none" style="margin-bottom: 10px;">
+      <!-- <ion-item lines="none" style="margin-bottom: 10px;">
         <ion-input type="password" label="Password" labelPlacement="floating" fill="outline" [counter]="true" maxlength="10"></ion-input>
       </ion-item>
      
       <ion-item lines="none"  style="margin-bottom: 10px;">
         <ion-input type="password" label="Confirm Password" labelPlacement="floating" fill="outline" [counter]="true" maxlength="10"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
 
     </ion-list>
-    <ion-button fill="outline" expand="block" (click)="sendOtp()" shape="round" color="primary">
-      Register
+    <ion-button fill="outline" expand="block" shape="round" color="primary">
+      Update
     </ion-button>
   <!-- </ion-card> -->
 </ion-content>

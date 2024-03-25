@@ -1,9 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Categories</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header title="Category"></app-header>
 <ion-content [fullscreen]="true">
   
   <ion-segment [(ngModel)]="segmentValue" value="expense" style="height: 50px;">
@@ -15,10 +10,10 @@
       <ion-label>Income</ion-label>
     </ion-segment-button>
     
-    <ion-segment-button value="savings">
+    <!-- <ion-segment-button value="savings">
       <ion-label>Savings</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="goals">
+    </ion-segment-button> -->
+    <ion-segment-button value="goal">
       <ion-label>Goals</ion-label>
     </ion-segment-button>
 
@@ -31,6 +26,9 @@
       </div>
       <div class="full-height slight-grey" *ngIf="segmentValue == 'income' ">
         <app-income-category [segment]="segmentValue"></app-income-category>
+      </div>
+      <div class="full-height slight-grey" *ngIf="segmentValue == 'goal' ">
+        <app-goal-category [segment]="segmentValue"></app-goal-category>
       </div>
     </div>
 

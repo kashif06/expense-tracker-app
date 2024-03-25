@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Hajj</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col>
+        <ion-item lines="full">
+          <ion-select value="all" placeholder="Select category" aria-label="Fruit">
+            <ion-select-option value="all">Hajj</ion-select-option>
+            <ion-select-option value="food">Car</ion-select-option>
+            <ion-select-option value="home">Gold</ion-select-option>
+            <ion-select-option value="medical">Yearly vacation</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-datetime-button color="none" datetime="dateBtn"></ion-datetime-button>
+          <ion-popover [keepContentsMounted]="true" alignment="center" mode="ios" 
+          animated="false" >
+            <ng-template>
+              <ion-datetime id="dateBtn"
+              preferWheel="false"
+              [showDefaultButtons]="true"
+              presentation="month-year"></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="full">
+          <ion-select value="1" placeholder="Select Bank" aria-label="Fruit">
+            <ion-select-option value="1">HDFC Current</ion-select-option>
+            <ion-select-option value="2">CANARA Saving</ion-select-option>
+            <ion-select-option value="3">HDFC Saving</ion-select-option>
+            <ion-select-option value="4">CANARA Current</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item lines="full">
+          <ion-input type="number" placeholder="Amt" [value]="amount" (ionInput)="onInputNumber($event)" #ionInputEl></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+</ion-content>

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { ModalController } from '@ionic/angular';
-import { EditExpenseComponent } from '../../../modal/edit-expense/edit-expense.component';
+import { EditExpenseComponent } from '../../modal/edit-expense/edit-expense.component';
 
 @Component({
   selector: 'app-explore-container',

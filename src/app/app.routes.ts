@@ -7,18 +7,22 @@ export const routes: Routes = [
   },
   {
     path: 'journey',
-    loadComponent: () => import('./page/journey/journey.page').then( m => m.JourneyPage)
+    loadComponent: () => import('./pages/journey/journey.page').then( m => m.JourneyPage)
   },
   {
     path: 'register',
-    loadComponent: () => import('./page/register/register.page').then( m => m.RegisterPage)
+    loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
   },
   {
     path: 'login',
-    loadComponent: () => import('./page/login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
   },
   {
     path: 'otp',
-    loadComponent: () => import('./page/otp/otp.page').then( m => m.OtpPage)
+    loadComponent: () => import('./pages/otp/otp.page').then( m => m.OtpPage)
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./pages/profile/profile.page').then( m => m.ProfilePage)
   },
 ];

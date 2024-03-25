@@ -45,9 +45,10 @@
   </ion-row>
   </ion-card>
 
+  <ion-searchbar color="light" placeholder="Search item"></ion-searchbar>
+
   <div style="overflow-y: scroll; height: 400px;margin-top: 10px;">
   <ion-content scroll-y>
-    <!-- <ion-card *ngFor="let item of items"> -->
       <ion-item *ngFor="let item of items">
         <ion-col size="4">
           <ion-label>
@@ -58,10 +59,9 @@
           <p>{{ item.description }}</p>
         </ion-col>
         <ion-col size="2" (click)="openModal()">
-          <ion-img height="25px" class="center" src="../../../assets/icon/create-outline.svg"></ion-img>
+          <span style="font-size: 12px; color: blue">EDIT</span>
         </ion-col>
       </ion-item>
-    <!-- </ion-card> -->
   </ion-content>
 </div>
 </ion-grid>
