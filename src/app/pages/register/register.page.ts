@@ -52,5 +52,10 @@ export class RegisterPage implements OnInit {
   sendOtp() {
     this.router.navigate(['/otp'])
   }
+  
+  goToLogin() {
+    this.router.navigate(['/login'])
+  }
+
 
 }

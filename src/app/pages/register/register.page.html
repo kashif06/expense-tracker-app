@@ -6,10 +6,10 @@
   <ion-grid class="ion-justify-content-center">
     <ion-row>
       <ion-col>
-        <h1><strong>Sign Up</strong></h1>
+        <h1 style="font-size: 2.4rem;"><strong>Sign Up</strong></h1>
       </ion-col>
-      <ion-col style="margin-top: auto;margin-bottom: auto;">
-        <p style="float: right; color: grey;">Login</p>
+      <ion-col (click)="goToLogin()" style="margin-top: auto;margin-bottom: auto;">
+        <h1 style="float: right; color: grey; font-size: 1.2rem;">Login</h1>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -18,31 +18,51 @@
     <ion-row>
       <ion-col size="5"></ion-col>
       <ion-col>
-        <ion-img src="../../../assets/icon/camera-outline.svg" alt="Camera Logo" style=" width:50px; height:50px "></ion-img>
+        <ion-img src="../../../assets/icon/newspaper-outline.svg" alt="Camera Logo" style=" width:50px; height:50px "></ion-img>
       </ion-col>
       <ion-col size="5"></ion-col>
     </ion-row>
     
   <ion-list>
-    <ion-item style="margin-bottom: 10px;">
-      <ion-label position="floating">Email address</ion-label>
-      <ion-input type="email" fill="outline" placeholder="Enter your email address" ngModel email></ion-input>
+
+    <ion-item lines="none" style="margin-bottom: 10px;">
+      <ion-input
+        label="First Name"
+        labelPlacement="floating"
+        [value]="firstName"
+        (ionInput)="onInputFirstName($event)"
+        #ionInputEl
+       style="border-bottom: 1px solid #c8c7cc;"></ion-input>
     </ion-item>
 
-    <ion-item style="margin-bottom: 10px;">
-      <ion-label position="floating">Username</ion-label>
-      <ion-input type="text" fill="outline" placeholder="Enter your username"></ion-input>
+    <ion-item lines="none" style="margin-bottom: 10px;">
+      <ion-input
+        label="Last Name"
+        labelPlacement="floating"
+        [value]="lastName"
+        (ionInput)="onInputlastName($event)"
+        #ionInputEl2
+       style="border-bottom: 1px solid #c8c7cc;"></ion-input>
     </ion-item>
 
-    <ion-item style="margin-bottom: 10px;">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" fill="outline" placeholder="Enter your password" [counter]="true" maxlength="10"></ion-input>
+    <ion-item lines="none" style="margin-bottom: 10px;">
+      <ion-input
+        type="email"
+        label="Email"
+        labelPlacement="floating"
+        errorText="Invalid email"
+        email
+      ></ion-input>
     </ion-item>
 
-    <ion-item style="margin-bottom: 10px;">
-      <ion-label position="floating">Repeat Password</ion-label>
-      <ion-input type="password" fill="outline" placeholder="Confirm your password" [counter]="true" maxlength="10"></ion-input>
+    <ion-item lines="none" style="margin-bottom: 5px;">
+      <ion-input type="password" label="Password" labelPlacement="floating" [counter]="true" maxlength="10"></ion-input>
     </ion-item>
+    
+    <ion-item lines="none"  style="margin-bottom: 10px;">
+      <ion-input type="password" label="Confirm Password" labelPlacement="floating" [counter]="true" maxlength="10"></ion-input>
+    </ion-item>
+
   </ion-list>
 
   <ion-card style="border-radius: 50px;">
