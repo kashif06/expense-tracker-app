@@ -1,81 +1,58 @@
-<ion-header [translucent]="true">
-  
-</ion-header>
-
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-grid class="ion-justify-content-center">
-    <ion-row>
-      <ion-col>
-        <h1 style="font-size: 2.4rem;"><strong>Sign Up</strong></h1>
-      </ion-col>
-      <ion-col (click)="goToLogin()" style="margin-top: auto;margin-bottom: auto;">
-        <h1 style="float: right; color: grey; font-size: 1.2rem;">Login</h1>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
-  <ion-grid class="ion-justify-content-center">
-    <ion-row>
-      <ion-col size="5"></ion-col>
-      <ion-col>
-        <ion-img src="../../../assets/icon/newspaper-outline.svg" alt="Camera Logo" style=" width:50px; height:50px "></ion-img>
-      </ion-col>
-      <ion-col size="5"></ion-col>
-    </ion-row>
-    
+  <h1 style="font-size: 2.4rem;"><strong>Sign Up</strong>
+    <span (click)="goToLogin()" style="float: right; color: grey; font-size: 1.5rem;margin-top: 10px;">Login</span>
+  </h1>
+  <div style="text-align: center; margin-top: 50px;">
+    <ion-icon src="assets/icon/newspaper-outline.svg" alt="Camera Logo" style="color: grey;width:80px; height:80px "></ion-icon>
+  </div>
+
   <ion-list>
 
-    <ion-item lines="none" style="margin-bottom: 10px;">
+    <ion-item>
       <ion-input
         label="First Name"
         labelPlacement="floating"
         [value]="firstName"
         (ionInput)="onInputFirstName($event)"
         #ionInputEl
-       style="border-bottom: 1px solid #c8c7cc;"></ion-input>
+        style="border-bottom: 1px solid #cec3c394;margin-bottom: 15px;"></ion-input>
     </ion-item>
 
-    <ion-item lines="none" style="margin-bottom: 10px;">
+    <ion-item>
       <ion-input
         label="Last Name"
         labelPlacement="floating"
         [value]="lastName"
         (ionInput)="onInputlastName($event)"
         #ionInputEl2
-       style="border-bottom: 1px solid #c8c7cc;"></ion-input>
+        style="border-bottom: 1px solid #cec3c394;margin-bottom: 15px;"></ion-input>
     </ion-item>
 
-    <ion-item lines="none" style="margin-bottom: 10px;">
+    <ion-item>
       <ion-input
         type="email"
         label="Email"
         labelPlacement="floating"
         errorText="Invalid email"
         email
-      ></ion-input>
+        style="margin-bottom: 15px;"></ion-input>
     </ion-item>
 
-    <ion-item lines="none" style="margin-bottom: 5px;">
+    <ion-item>
       <ion-input type="password" label="Password" labelPlacement="floating" [counter]="true" maxlength="10"></ion-input>
     </ion-item>
     
-    <ion-item lines="none"  style="margin-bottom: 10px;">
+    <ion-item>
       <ion-input type="password" label="Confirm Password" labelPlacement="floating" [counter]="true" maxlength="10"></ion-input>
     </ion-item>
 
   </ion-list>
 
-  <ion-card style="border-radius: 50px;">
-    <ion-list>
-      </ion-list>
-    <ion-button fill="clear" expand="block" (click)="sendOtp()" shape="round" color="primary">
-      SIGN UP <ion-icon src="../../../assets/icon/checkmark-outline.svg" slot="start"></ion-icon>
+  <ion-card class="ion-activatable ripple-parent" style="border-radius: 25px; padding: 5px; margin-top: 25px;">
+    <ion-button fill="clear" expand="block" shape="round" color="primary" style="font-size: 20px;">
+      SIGN UP <ion-icon src="assets/icon/checkmark-outline.svg" slot="start"></ion-icon>
     </ion-button>
   </ion-card>
-
-  </ion-grid>
-  
-
 
 </ion-content>
 
